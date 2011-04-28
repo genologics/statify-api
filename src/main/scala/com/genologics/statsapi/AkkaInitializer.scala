@@ -12,8 +12,11 @@ import akka.actor.BootableActorLoaderService
 class AkkaInitializer extends ServletContextListener {
     lazy val loader = new AkkaLoader
 
-    def contextDestroyed(e: ServletContextEvent): Unit = loader.shutdown
+    def contextDestroyed(e: ServletContextEvent) {
+        loader.shutdown
+    }
 
-    def contextInitialized(e: ServletContextEvent): Unit =
+    def contextInitialized(e: ServletContextEvent) {
         loader.boot(true, new BootableActorLoaderService {})
+    }
 }

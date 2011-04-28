@@ -10,10 +10,8 @@ import java.util.UUID
  */
 
 class RegistrationService extends Actor {
-    println("RegistrationService created")
-
     def receive = {
         case "Register" => self.reply(UUID.randomUUID.toString)
-        case _ => self.reply("not register")
+        case _ => self.reply(Nil)
     }
 }
