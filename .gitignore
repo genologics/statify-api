@@ -4,3 +4,4 @@ target/
 /project/boot/
 lib_managed/
 src_managed/
+/out/
